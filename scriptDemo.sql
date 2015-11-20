@@ -8,7 +8,7 @@ lastname varchar(100), username varchar(50) NOT NULL,
  password varchar(50) NOT NULL) Engine=InnoDB;
  
 CREATE TABLE IF NOT EXISTS menu
-(id_menu INT(10) NOT NULL, service_date date,
+(id_menu INT(10) NOT NULL,
  employeeid_employee INT(10) NOT NULL)Engine=InnoDB;
 
 CREATE TABLE IF NOT EXISTS menu_dish
