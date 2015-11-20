@@ -20,17 +20,12 @@ public class DishDaoTest extends BaseDaoTestCase {
 		 //Dish dish=new Dish();
 		 log.debug("testing find dish by id...");
 		 List<Dish> dishList = dishdao.findByIdDish(2);
-		 assertNotNull(dishList.size());
-		 
-		 
-		 //assertSame(2,dish.getId_dish());
-		//assertTrue("Result ID =2",true);
-		// assertTrue("Result ID !=2",false);
+		assertNotNull(dishList.size());
 	 }
 	 @Test
 	 public void testFindByName() throws Exception{
 		 log.debug("testing find dish by name...");
 		 List<Dish> dish = dishdao.findByName("Ensalada de papaya");
-		 assertNotNull(dish.size());				
+		assertNotNull(dish.size());				
 	 }
 }

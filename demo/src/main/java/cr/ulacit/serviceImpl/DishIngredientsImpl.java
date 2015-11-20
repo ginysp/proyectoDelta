@@ -9,7 +9,6 @@ import org.appfuse.service.impl.GenericManagerImpl;
 import org.springframework.stereotype.Service;
 
 import cr.ulacit.dao.DishIngredientsDao;
-import cr.ulacit.dto.DishIngredientsDTO;
 import cr.ulacit.model.DishIngredients;
 import cr.ulacit.service.DishIngredientsManager;
 
@@ -27,21 +26,18 @@ public class DishIngredientsImpl extends GenericManagerImpl<DishIngredients,Inte
 	}
 
 	@Override
-	public List<DishIngredientsDTO> findByIdIngredient(Integer ingredient_id) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<DishIngredients> findByIdIngredient(Integer ingredient_id) {
+		return dishIngreDao.findByIDIngredients(ingredient_id);
 	}
 
 	@Override
-	public List<DishIngredientsDTO> findByIdDish(Integer dish_id) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<DishIngredients> findByIdDish(Integer dish_id) {
+		return dishIngreDao.findByIdDish(dish_id);
 	}
 
 	@Override
-	public List<DishIngredientsDTO> getDishIngredients() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<DishIngredients> getDishIngredients() {
+		return dishIngreDao.getAll();
 	}
 
 }

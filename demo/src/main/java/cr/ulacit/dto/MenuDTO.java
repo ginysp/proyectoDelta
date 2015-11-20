@@ -7,6 +7,7 @@ import cr.ulacit.model.MenuDish;
 public class MenuDTO {
 	private int id_menu;
 	private MenuDish[] MenuDish;
+	
 	public MenuDTO(){
 		super();
 	}

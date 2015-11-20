@@ -22,7 +22,8 @@ public class IngredientsDaoTest extends BaseDaoTestCase {
 	@Test
 	 public void testFindByName() throws Exception{
 		 log.debug("testing find ingredient by name...");
-		 List<Ingredients> ingreList=ingreDao.findByName("Melocotones");
-		 assertNotNull(ingreList.size());
+		 List<Ingredients> ingredients=null;
+		 ingredients=ingreDao.findByName("Melocotones");
+		 assertNotNull(ingredients.size());
 	}
 }
