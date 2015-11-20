@@ -1,0 +1,9 @@
+cr\ulacit\webapp\controller\PasswordHintControllerTest.class
+cr\ulacit\webapp\filter\MockFilterChain.class
+cr\ulacit\webapp\controller\UserControllerTest.class
+cr\ulacit\webapp\controller\BaseControllerTestCase.class
+cr\ulacit\webapp\controller\UpdatePasswordControllerTest.class
+cr\ulacit\webapp\controller\SignupControllerTest.class
+cr\ulacit\webapp\listener\StartupListenerTest.class
+cr\ulacit\webapp\filter\LocaleFilterTest.class
+cr\ulacit\webapp\controller\UserFormControllerTest.class
