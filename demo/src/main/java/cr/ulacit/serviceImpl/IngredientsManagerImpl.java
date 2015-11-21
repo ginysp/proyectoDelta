@@ -41,5 +41,13 @@ public class IngredientsManagerImpl extends GenericManagerImpl<Ingredients,Integ
 		return ingreDTOs;
 	}
 	
-
+	@Override
+	public boolean createingredient(Integer idIngredient, String name, Integer calories){
+		return false;
+	}
+	
+	@Override
+	public boolean deleteingredient(Integer idIngredient){
+		return false;
+	}
 }

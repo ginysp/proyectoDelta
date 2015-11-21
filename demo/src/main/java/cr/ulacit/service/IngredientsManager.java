@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.jws.WebService;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -26,5 +27,14 @@ public interface IngredientsManager extends  GenericManager<Ingredients,Integer>
 	@Path("{id_ingredient}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	List<IngredientsDTO> findByName(@QueryParam("name")String name);
-
+	
+	@POST
+	@Path("/createingredient/")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	boolean createingredient(@QueryParam("idIngredient") Integer id_ingredient,@QueryParam("name") String name,@QueryParam("calories") Integer calories);
+	
+	@POST
+	@Path("/deleteingredient/")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	boolean deleteingredient(@QueryParam("idIngredient") Integer id_ingredient);
 }

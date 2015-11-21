@@ -33,5 +33,13 @@ public class MenuManagerImpl extends GenericManagerImpl<Menu,Integer> implements
 		return menuDTOs;
 	}
 	
-
+	@Override
+	public boolean createmenu(Integer idMenu, Integer idEmployee){
+		return false;
+	}
+	
+	@Override
+	public boolean deletemenu(Integer idMenu, Integer idEmployee){
+		return false;
+	}
 }

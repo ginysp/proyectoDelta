@@ -26,11 +26,4 @@ public class EmployeeDaoImpl extends GenericDaoHibernate<Employee,Integer> imple
 	public List<Employee> findByName(String name) {
 		return getSession().createCriteria(Employee.class).add(Restrictions.eq("name",name)).list();
 	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<Employee> findByLastName(String lastname) {
-		return getSession().createCriteria(Employee.class).add(Restrictions.eq("lastname",lastname)).list();
-	}
-
 }

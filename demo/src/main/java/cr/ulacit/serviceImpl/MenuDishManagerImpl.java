@@ -26,5 +26,15 @@ public class MenuDishManagerImpl extends GenericManagerImpl<MenuDish, Integer> i
 	public List<MenuDish> findByIdDish(Integer menu_id) {
 		return dao.findByIdDish(menu_id);
 	}
+	
+	@Override
+	public boolean createmenudish(Integer idMenu, Integer idDish){
+		return false;
+	}
+	
+	@Override
+	public boolean deletemenudish(Integer idMenu, Integer idDish){
+		return false;
+	}
 
 }

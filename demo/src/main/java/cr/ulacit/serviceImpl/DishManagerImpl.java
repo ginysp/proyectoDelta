@@ -53,5 +53,17 @@ public class DishManagerImpl extends GenericManagerImpl<Dish,Integer> implements
 		dishDTOs=DishMapper.INSTANCE.dishsToDishsDTOS(dishList);
 		return dishDTOs;
 	}
+	
+	@Override
+	public boolean createdish(Integer idDish, String name, Integer size, String description){
+	
+		return false;
+	}
+	
+	@Override
+	public boolean deletedish(Integer idDish){
+	
+		return false;
+	}
 
 }

@@ -1,5 +1,7 @@
 package cr.ulacit.dto;
 
+import java.util.Arrays;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 import cr.ulacit.model.Menu;
@@ -8,20 +10,16 @@ import cr.ulacit.model.Menu;
 public class EmployeeDTO {
 	private int id_employee;
 	private String name;
-	private String lastname;
-	private String username;
 	private String password;
 	private Menu[] Menu;
 	public EmployeeDTO(){
 		super();
 	}
-	public EmployeeDTO(int id_employee, String name, String lastname, String username, String password,
+	public EmployeeDTO(int id_employee, String name, String password,
 			Menu[] menu) {
 		super();
 		this.id_employee = id_employee;
 		this.name = name;
-		this.lastname = lastname;
-		this.username = username;
 		this.password = password;
 		Menu = menu;
 	}
@@ -37,18 +35,6 @@ public class EmployeeDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getLastname() {
-		return lastname;
-	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
 	public String getPassword() {
 		return password;
 	}
@@ -63,8 +49,8 @@ public class EmployeeDTO {
 	}
 	@Override
 	public String toString() {
-		return "EmployeeDTO [id_employee=" + id_employee + ", name=" + name + ", lastname=" + lastname + ", username="
-				+ username + ", password=" + password + "]";
+		return "EmployeeDTO [id_employee=" + id_employee + ", name=" + name + ", password=" + password + ", Menu="
+				+ Arrays.toString(Menu) + "]";
 	}
 	
 	

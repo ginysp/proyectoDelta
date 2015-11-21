@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.jws.WebService;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -27,9 +28,13 @@ public interface EmployeeManager extends GenericManager<Employee, Integer> {
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })	
 	List<EmployeeDTO> findByName(@QueryParam("name") String name);
 	
-	@GET
-	@Path("/Lastname")
+	@POST
+	@Path("/createemployee/")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	List<EmployeeDTO> findByLastName(@QueryParam("lastname") String lastname);
+	boolean createemployee(@QueryParam("idEmployee") Integer id,@QueryParam("name") String name,@QueryParam("password") String password);
 	
+	@POST
+	@Path("/deleteemployee/")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	boolean deleteemployee(@QueryParam("idEmployee") Integer id);
 }

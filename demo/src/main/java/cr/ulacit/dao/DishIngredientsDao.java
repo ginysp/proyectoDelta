@@ -9,4 +9,6 @@ import cr.ulacit.model.DishIngredients;
 public interface DishIngredientsDao extends GenericDao<DishIngredients,Integer>{
 	public List<DishIngredients> findByIDIngredients(Integer ingredient_id);
 	public List<DishIngredients> findByIdDish(Integer dish_id);
+	public double totalCalories(List<Double> list);
+	List<Double> findCaloriesByIdDish(Integer dish_id);
 }

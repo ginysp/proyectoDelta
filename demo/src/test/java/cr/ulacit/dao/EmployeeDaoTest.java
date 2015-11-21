@@ -26,10 +26,4 @@ public class EmployeeDaoTest extends BaseDaoTestCase {
 		 List<Employee> empList= empDao.findByName("Juan");
 		 assertNotNull(empList.size());
 	 }
-	 @Test
-	 public void testFindByLastName() throws Exception{
-		 log.debug("testing find employee by lastname...");
-		 List<Employee> empList= empDao.findByLastName("Montoya Rocha");
-		 assertNotNull(empList.size());
-	 }
 }

@@ -40,13 +40,14 @@ public class EmployeeManagerImpl extends GenericManagerImpl<Employee,Integer> im
 		employeeDTOs=EmployeeMapper.INSTANCE.employeeToEmpDTO(employeeList);
 		return employeeDTOs;
 	}
-
+	
 	@Override
-	public List<EmployeeDTO> findByLastName(String lastname) {
-		List<EmployeeDTO> employeeDTOs=null;
-		List<Employee> employeeList= EmployeeDao.findByLastName(lastname);
-		employeeDTOs=EmployeeMapper.INSTANCE.employeeToEmpDTO(employeeList);
-		return employeeDTOs;
+	public boolean createemployee(Integer idEmployee, String name, String password){
+		return false;
 	}
-
+	
+	@Override
+	public boolean deleteemployee(Integer idEmployee){
+		return false;
+	}
 }

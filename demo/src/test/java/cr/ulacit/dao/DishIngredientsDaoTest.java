@@ -21,8 +21,15 @@ public class DishIngredientsDaoTest extends BaseDaoTestCase{
 	 }
 	 @Test
 	 public void testFindByIdDish() throws Exception{
-		 log.debug("testing find dishIngredients by idDish...");
+		 log.debug("testing find dish info by idDish...");
 		 List<DishIngredients> dIngList = dishIngreDao.findByIdDish(2);
 		 assertNotNull(dIngList.size());
+	 }
+	 
+	 @Test
+	 public void findCaloriesByIdDish() throws Exception{
+		 log.debug("testing find dishIngredients calories by idDish...");
+		 List<Double> dIngList = dishIngreDao.findCaloriesByIdDish(2);
+		  assertTrue(dIngList.size() > 0);
 	 }
 }

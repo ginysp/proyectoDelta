@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.jws.WebService;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -33,4 +34,14 @@ public interface DishManager extends GenericManager<Dish,Integer> {
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	List<DishDTO> getDish();
+	
+	@POST
+	@Path("/createdish/")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	boolean createdish(@QueryParam("idDish") Integer dish_id,@QueryParam("name") String name,@QueryParam("size") Integer size,@QueryParam("description") String description);
+	
+	@POST
+	@Path("/deletedishIngredients/")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	boolean deletedish(@QueryParam("idDish") Integer dish_id);
 }
