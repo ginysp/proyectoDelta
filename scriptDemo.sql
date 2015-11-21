@@ -4,7 +4,6 @@ USE demo;
 
 CREATE TABLE IF NOT EXISTS employee  
 (id_employee INT(10) NOT NULL, name varchar(75), 
-lastname varchar(100), username varchar(50) NOT NULL,
  password varchar(50) NOT NULL) Engine=InnoDB;
  
 CREATE TABLE IF NOT EXISTS menu
@@ -16,8 +15,7 @@ CREATE TABLE IF NOT EXISTS menu_dish
 
 CREATE TABLE IF NOT EXISTS dish
 (id_dish INT(10) NOT NULL, name varchar(100), 
-size varchar(30), description varchar(100), totalcalories INT(10), 
-count INT(10))Engine=InnoDB;
+size varchar(30), description varchar(100), timesserved INT(10))Engine=InnoDB;
 
 CREATE TABLE IF NOT EXISTS dish_ingredients
 (dishid_dish INT(10) NOT NULL, ingredientsid_ingredient INT(10) 
