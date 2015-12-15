@@ -9,11 +9,12 @@ import org.appfuse.service.impl.GenericManagerImpl;
 import org.springframework.stereotype.Service;
 
 import cr.ulacit.dao.MenuDao;
-import cr.ulacit.dto.MenuDTO;
-import cr.ulacit.mapper.MenuMapper;
 import cr.ulacit.model.Menu;
 import cr.ulacit.service.MenuManager;
-
+/*Implementación de la interfaz del MenuManager
+ *@author: Gineth Salazar - Lourdes Sotomayor
+ *@version: 2, 2015
+ */
 @Transactional
 @Service("menuManager")
 @WebService(serviceName="MenuService",  endpointInterface ="cr.ulacit.service.MenuManager")
@@ -26,20 +27,7 @@ public class MenuManagerImpl extends GenericManagerImpl<Menu,Integer> implements
 		this.dao = dao;
 	}
 	@Override
-	public List<MenuDTO> findByID(Integer id_menu) {
-		List<MenuDTO> menuDTOs=null;
-		List<Menu> menuList= dao.findByIdMenu(id_menu);
-		menuDTOs=MenuMapper.INSTANCE.MenusDTOs(menuList);
-		return menuDTOs;
-	}
-	
-	@Override
-	public boolean createmenu(Integer idMenu, Integer idEmployee){
-		return false;
-	}
-	
-	@Override
-	public boolean deletemenu(Integer idMenu, Integer idEmployee){
-		return false;
+	public List<Menu> getMenu() {
+		return dao.getAll();
 	}
 }

@@ -10,7 +10,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2015-11-19T22:17:10-0600",
+    date = "2015-12-14T21:04:00-0600",
     comments = "version: 1.0.0.CR1, compiler: javac, environment: Java 1.8.0_05 (Oracle Corporation)"
 )
 public class EmployeeMapperImpl implements EmployeeMapper {
@@ -37,12 +37,10 @@ public class EmployeeMapperImpl implements EmployeeMapper {
 
         EmployeeDTO employeeDTO_ = new EmployeeDTO();
 
-        employeeDTO_.setPassword( employee.getPassword() );
-        employeeDTO_.setId_employee( employee.getId_employee() );
         employeeDTO_.setName( employee.getName() );
+        employeeDTO_.setPassword( employee.getPassword() );
         employeeDTO_.setMenu( menuSetToMenuArray( employee.getMenu() ) );
-        employeeDTO_.setLastname( employee.getLastname() );
-        employeeDTO_.setUsername( employee.getUsername() );
+        employeeDTO_.setId_employee( employee.getId_employee() );
 
         return employeeDTO_;
     }

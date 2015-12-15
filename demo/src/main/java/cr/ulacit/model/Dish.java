@@ -12,6 +12,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/*Contiene información de los dish y tiene dos relaciones otras dos clases MenuDish y DishIngredients
+ *@author: Gineth Salazar - Lourdes Sotomayor
+ *@version: 2, 2015
+ *@See: MenuDish, DishIngredients
+ */
 @XmlRootElement
 @Entity
 @Table(name="dish")
@@ -30,11 +35,8 @@ public class Dish {
 	@Column(name="description", length=100)
 	private String description;
 	
-	@Column(name="totalcalories")
-	private int totalcalories;
-	
-	@Column(name="count")
-	private int count;
+	@Column(name="timesserved")
+	private int timesserved;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy="Dish", cascade=CascadeType.ALL)
 	private Set <MenuDish> MenuDish;
@@ -66,17 +68,11 @@ public class Dish {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public int getTotalcalories() {
-		return totalcalories;
+	public int getTimesserved() {
+		return timesserved;
 	}
-	public void setTotalcalories(int totalcalories) {
-		this.totalcalories = totalcalories;
-	}
-	public int getCount() {
-		return count;
-	}
-	public void setCount(int count) {
-		this.count = count;
+	public void setTimesserved(int timesserved) {
+		this.timesserved = timesserved;
 	}
 	public Set<MenuDish> getMenuDish() {
 		return MenuDish;
@@ -90,17 +86,15 @@ public class Dish {
 	public void setDishIngredients(Set<DishIngredients> dishIngredients) {
 		DishIngredients = dishIngredients;
 	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + count;
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + id_dish;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((size == null) ? 0 : size.hashCode());
-		result = prime * result + totalcalories;
+		result = prime * result + timesserved;
 		return result;
 	}
 	@Override
@@ -112,8 +106,6 @@ public class Dish {
 		if (getClass() != obj.getClass())
 			return false;
 		Dish other = (Dish) obj;
-		if (count != other.count)
-			return false;
 		if (description == null) {
 			if (other.description != null)
 				return false;
@@ -131,17 +123,15 @@ public class Dish {
 				return false;
 		} else if (!size.equals(other.size))
 			return false;
-		if (totalcalories != other.totalcalories)
+		if (timesserved != other.timesserved)
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
 		return "Dish [id_dish=" + id_dish + ", name=" + name + ", size=" + size + ", description=" + description
-				+ ", totalcalories=" + totalcalories + ", count=" + count + "]";
+				+ ", timesserved=" + timesserved + "]";
 	}
-	
-	
 	
 	
 }

@@ -15,9 +15,15 @@ import org.appfuse.service.GenericManager;
 
 import cr.ulacit.dto.IngredientsDTO;
 import cr.ulacit.model.Ingredients;
+/*Interfaz del Ingredients tiene como función ser un webservice con el fin de implementar el CRUD 
+ *@author: Gineth Salazar - Lourdes Sotomayor
+ *@version: 2, 2015
+ *@See: IngredientsManagerImpl
+ */
 @WebService
 @Path("/ingredients")
 public interface IngredientsManager extends  GenericManager<Ingredients,Integer> {
+	//URL  localhost:8080/services/api/ingredients
 	@GET
 	@Path("{id_ingredient}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })

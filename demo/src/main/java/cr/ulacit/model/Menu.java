@@ -16,7 +16,11 @@ import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
+/*Contiene información del Menu y tiene una relación con la clase MenuDish
+ *@author: Gineth Salazar - Lourdes Sotomayor
+ *@version: 2, 2015
+ *@See: MenuDish
+ */
 @XmlRootElement(name="menu")
 @Entity
 @Table(name="menu")

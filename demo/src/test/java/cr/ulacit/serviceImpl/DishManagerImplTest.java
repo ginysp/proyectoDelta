@@ -10,8 +10,6 @@ import cr.ulacit.model.Dish;
 import static org.junit.Assert.assertSame;
 import static org.mockito.BDDMockito.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DishManagerImplTest extends BaseManagerMockTestCase {
 	@InjectMocks
@@ -21,7 +19,7 @@ public class DishManagerImplTest extends BaseManagerMockTestCase {
 	
 	@Test
     public void testGetDish() {
-		log.debug("Testing get");
+		System.out.println("Testing get");
 		//given
 		final Integer id=2;
 		final Dish dish=new Dish();
@@ -30,21 +28,31 @@ public class DishManagerImplTest extends BaseManagerMockTestCase {
 		Dish result=manager.get(id);
 		//then
 		assertSame(dish,result);
-		log.info("Dishs:"+dish);
-		log.info("Result:"+result);
+		System.out.println("Dishs:"+dish);
+		System.out.println("Result:"+result);
 	}
-	public void testGetDishs(){
-		log.debug("Testing get all");
-		//given
-		final List dishs=new ArrayList();
-		given(dao.getAll()).willReturn(dishs);
-		//when
-		List result=manager.getAll();
-		//then
-		assertSame(dishs,result);
-		log.info("Dishs:"+dishs);
-		log.info("Result:"+result);
+	@Test
+	public void testGetDishID(){
+	 System.out.println("testing get Dish...");
+		manager.getDishbyID(2);	
+	}
+	@Test
+	public void testCreateDish(){
+		 System.out.println("testing create Dish...");
+		 manager.createDish("Pizza", "Grande","Pizza de supreme");
+	}
+	@Test
+	public void testUpdateDish(){
+		 System.out.println("testing update Dish...");
+		 manager.updateDish(2, "Tres Leches",  "mediano", "Tres leches especial de la casa");
 		
 	}
+	@Test
+	public void testDeleteDish(){
+		 System.out.println("testing delete Dish...");
+		 manager.deleteDish(1);
+	}
+	
+	
 	 
 }

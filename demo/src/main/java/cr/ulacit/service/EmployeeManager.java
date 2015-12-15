@@ -15,9 +15,15 @@ import org.appfuse.service.GenericManager;
 
 import cr.ulacit.dto.EmployeeDTO;
 import cr.ulacit.model.Employee;
+/*Interfaz del employee tiene como función ser un webservice con el fin de implementar el CRUD 
+ *@author: Gineth Salazar - Lourdes Sotomayor
+ *@version: 2, 2015
+ *@See: EmployeeManagerImpl
+ */
 @WebService
 @Path("/employee")
 public interface EmployeeManager extends GenericManager<Employee, Integer> {
+	//URL  localhost:8080/services/api/employee
 	@GET
 	@Path("/IDemployee")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })	
@@ -31,10 +37,10 @@ public interface EmployeeManager extends GenericManager<Employee, Integer> {
 	@POST
 	@Path("/createemployee/")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	boolean createemployee(@QueryParam("idEmployee") Integer id,@QueryParam("name") String name,@QueryParam("password") String password);
+	boolean createemployee(@QueryParam("id_employee") Integer id,@QueryParam("name") String name,@QueryParam("password") String password);
 	
 	@POST
 	@Path("/deleteemployee/")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	boolean deleteemployee(@QueryParam("idEmployee") Integer id);
+	boolean deleteemployee(@QueryParam("id_employee") Integer id);
 }

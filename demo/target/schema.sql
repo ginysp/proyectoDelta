@@ -1,11 +1,11 @@
 
     alter table dish_ingredients 
         drop 
-        foreign key FK_b0ydxx7dgl31jceacx4jf8p2c;
+        foreign key FK_3p8987fu7d3km8agb1ml0acfa;
 
     alter table dish_ingredients 
         drop 
-        foreign key FK_3p8987fu7d3km8agb1ml0acfa;
+        foreign key FK_b0ydxx7dgl31jceacx4jf8p2c;
 
     alter table menu 
         drop 
@@ -13,11 +13,11 @@
 
     alter table menu_dish 
         drop 
-        foreign key FK_4staefqk4kxlf5e3uycgjqdje;
+        foreign key FK_qywcmq7c8ob1xukcv69xu1qxe;
 
     alter table menu_dish 
         drop 
-        foreign key FK_qywcmq7c8ob1xukcv69xu1qxe;
+        foreign key FK_4staefqk4kxlf5e3uycgjqdje;
 
     alter table user_role 
         drop 
@@ -70,27 +70,25 @@
 
     create table dish (
         id_dish integer not null auto_increment,
-        count integer,
         description varchar(100),
         name varchar(100),
         size varchar(30),
-        totalcalories integer,
+        timesserved integer,
         primary key (id_dish)
     ) ENGINE=InnoDB;
 
     create table dish_ingredients (
+        id_dishingredients integer not null auto_increment,
         quantity integer,
-        ingredientsid_ingredient integer not null,
         dishid_dish integer not null,
-        primary key (ingredientsid_ingredient, dishid_dish)
+        ingredientsid_ingredient integer not null,
+        primary key (id_dishingredients)
     ) ENGINE=InnoDB;
 
     create table employee (
         id_employee integer not null auto_increment,
-        lastname varchar(100),
         name varchar(75),
-        password varchar(50),
-        username varchar(50),
+        password varchar(100),
         primary key (id_employee)
     ) ENGINE=InnoDB;
 
@@ -108,9 +106,10 @@
     ) ENGINE=InnoDB;
 
     create table menu_dish (
-        menuid_menu integer not null,
+        id_menudish integer not null auto_increment,
         dishid_dish integer not null,
-        primary key (menuid_menu, dishid_dish)
+        menuid_menu integer not null,
+        primary key (id_menudish)
     ) ENGINE=InnoDB;
 
     create table role (
@@ -133,14 +132,14 @@
         add constraint UK_3k4cplvh82srueuttfkwnylq0  unique (username);
 
     alter table dish_ingredients 
-        add constraint FK_b0ydxx7dgl31jceacx4jf8p2c 
-        foreign key (ingredientsid_ingredient) 
-        references ingredients (id_ingredient);
-
-    alter table dish_ingredients 
         add constraint FK_3p8987fu7d3km8agb1ml0acfa 
         foreign key (dishid_dish) 
         references dish (id_dish);
+
+    alter table dish_ingredients 
+        add constraint FK_b0ydxx7dgl31jceacx4jf8p2c 
+        foreign key (ingredientsid_ingredient) 
+        references ingredients (id_ingredient);
 
     alter table menu 
         add constraint FK_3gsdbfvlilnrk2p40mxa729dx 
@@ -148,14 +147,14 @@
         references employee (id_employee);
 
     alter table menu_dish 
-        add constraint FK_4staefqk4kxlf5e3uycgjqdje 
-        foreign key (menuid_menu) 
-        references menu (id_menu);
-
-    alter table menu_dish 
         add constraint FK_qywcmq7c8ob1xukcv69xu1qxe 
         foreign key (dishid_dish) 
         references dish (id_dish);
+
+    alter table menu_dish 
+        add constraint FK_4staefqk4kxlf5e3uycgjqdje 
+        foreign key (menuid_menu) 
+        references menu (id_menu);
 
     alter table user_role 
         add constraint FK_it77eq964jhfqtu54081ebtio 

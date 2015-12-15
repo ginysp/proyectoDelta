@@ -8,5 +8,11 @@
     <session-factory>
         <mapping class="org.appfuse.model.User"/>
         <mapping class="org.appfuse.model.Role"/>
+        <mapping class="cr.ulacit.model.Dish"/>
+         <mapping class="cr.ulacit.model.DishIngredients"/>
+          <mapping class="cr.ulacit.model.Employee"/>
+           <mapping class="cr.ulacit.model.Ingredients"/>
+            <mapping class="cr.ulacit.model.Menu"/>
+             <mapping class="cr.ulacit.model.MenuDish"/>
     </session-factory>
 </hibernate-configuration>

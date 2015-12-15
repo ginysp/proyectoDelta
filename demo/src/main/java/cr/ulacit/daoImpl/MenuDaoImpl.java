@@ -1,12 +1,13 @@
 package cr.ulacit.daoImpl;
 
-import java.util.List;
-
 import org.appfuse.dao.hibernate.GenericDaoHibernate;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import cr.ulacit.dao.MenuDao;
 import cr.ulacit.model.Menu;
+/*Implementación de la interfaz del MenuDao
+ *@author: Gineth Salazar - Lourdes Sotomayor
+ *@version: 2, 2015
+ */
 @Repository("menuDao")
 public class MenuDaoImpl extends GenericDaoHibernate<Menu,Integer> implements MenuDao{
 
@@ -14,10 +15,15 @@ public class MenuDaoImpl extends GenericDaoHibernate<Menu,Integer> implements Me
 		super(Menu.class);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public List<Menu> findByIdMenu(Integer id) {
-		return getSession().createCriteria(Menu.class).add(Restrictions.eq("id_menu",id)).list();
+	public void findMenuByID(Integer id) {
+		Menu menu= new Menu();
+		if(menu.getId_menu()!=id){
+		}
+		System.out.println("Menu info:"+menu.toString());
+		
+		
 	}
+	
 
 }

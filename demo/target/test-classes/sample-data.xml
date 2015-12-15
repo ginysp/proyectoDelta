@@ -119,27 +119,22 @@
             <value description="role_id">-2</value>
         </row>
     </table>
-    <table name="employee">
+     <table name="employee">
         <column>id_employee</column>
         <column>name</column>
-        <column>lastname</column>
-        <column>username</column>
         <column>password</column>
         <row>
-            <value>1</value>
-            <value>Juan</value>
-            <value>Quiros Perez</value>
-             <value>jquirosp</value>
-            <value>jquirosp</value>
+           <value description="id">1</value> 
+            <value description="name">gsalazar</value>
+            <value description="password">$2a$10$CnQVJ9bsWBjMpeSKrrdDEeuIptZxXrwtI6CZ/OgtNxhIgpKxXeT9y</value>
         </row>
         <row>
-            <value>2</value>
-            <value>Raquel</value>
-            <value>Montoya Rocha</value>
-             <value>rmontoyar</value>
-            <value>rmontoyar</value>
+            <value description="id">2</value>
+            <value description="name">lsotomayor</value>
+            <value description="password">$2a$10$bH/ssqW8OhkTlIso9/yakubYODUOmh.6m5HEJvcBq3t3VdBh7ebqO</value>
         </row>
     </table>
+    
      <table name="menu">
         <column>id_menu</column>
         <column>employeeid_employee</column>
@@ -151,61 +146,59 @@
             <value>2</value>
             <value>1</value>
         </row>
-         <row>
-            <value>3</value>
-            <value>1</value>
-        </row>
         </table>
+        
      <table name="dish">
         <column>id_dish</column>
         <column>name</column>
         <column>size</column>
         <column>description</column>
-        <column>totalcalories</column>
-        <column>count</column>
+        <column>timesserved</column>
         <row>
             <value>1</value>
             <value>Fetuccini con tomate y albahaca</value>
             <value>mediano</value>
              <value>Pasta con tomate por encima y sobre este unas hojas de albahaca </value>
-            <value>0</value>
-            <value>0</value> 
+            <value>01112015</value> 
         </row>
         <row>
             <value>2</value>
             <value>Ensalada de papaya</value>
             <value>pequeño</value>
              <value>Ensalada semi-dulce de papaya</value>
-            <value>0</value>
-            <value>0</value>
+            <value>20102015</value>
         </row>
          <row>
             <value>3</value>
             <value>Mil hojas con chocoloate y melocotón</value>
             <value>pequeño</value>
              <value>Postre de mil hojas con chocolate y melocotón</value>
-            <value>0</value>
-            <value>0</value>
+            <value>01122015</value>
         </row>
-    </table>
-    <table name="menu_dish">
+        </table>
+        
+         <table name="menu_dish">
+        <column>id_menudish</column>
         <column>menuid_menu</column>
         <column>dishid_dish</column>
         <row>
+        	<value>1</value>
             <value>1</value>
             <value>3</value>
         </row>
         <row>
+        	<value>2</value>
             <value>2</value>
             <value>2</value>
         </row>
          <row>
-            <value>3</value>
+        	 <value>3</value>
             <value>1</value>
+            <value>3</value>
         </row>
     </table>
-  
-     <table name="ingredients">
+    
+    <table name="ingredients">
         <column>id_ingredient</column>
         <column>name</column>
         <column>calories</column>
@@ -217,7 +210,7 @@
         <row>
             <value>2</value>
             <value>Salsa de tomate</value>
-             <value>150</value>
+             <value>200</value>
         </row>
          <row>
             <value>3</value>
@@ -240,24 +233,48 @@
             <value>200</value>
         </row>
     </table>
+
       <table name="dish_ingredients">
+      <column>id_dishingredients</column>
         <column>dishid_dish</column>
         <column>ingredientsid_ingredient</column>
         <column>quantity</column>
         <row>
+        	<value>1</value>
             <value>1</value>
             <value>1</value>
+            <value>2</value>
+        </row>
+         <row>
+        	<value>2</value>
+            <value>1</value>
+            <value>2</value>
             <value>2</value>
         </row>
         <row>
+        	<value>3</value>
             <value>2</value>
             <value>3</value>
+            <value>3</value>
+        </row>
+        <row>
+        	<value>4</value>
+            <value>2</value>
+            <value>4</value>
              <value>3</value>
         </row>
          <row>
+         	 <value>5</value>
+            <value>3</value>
+            <value>5</value>
+            <value>2</value>
+        </row>
+         <row>
+         	 <value>6</value>
             <value>3</value>
             <value>6</value>
             <value>2</value>
         </row>
     </table>
+   
 </dataset>

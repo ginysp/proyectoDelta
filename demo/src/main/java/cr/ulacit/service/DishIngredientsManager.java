@@ -12,24 +12,23 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import org.appfuse.service.GenericManager;
-import cr.ulacit.dto.DishIngredientsDTO;
 
 import cr.ulacit.model.DishIngredients;
-
+/*Interfaz del DishIngredients tiene como función ser un webservice con el fin de implementar el CRUD 
+ *@author: Gineth Salazar - Lourdes Sotomayor
+ *@version: 2, 2015
+ *@See: DishIngredientsImpl
+ */
 @WebService
 @Path("/dishIngredients")
 public interface DishIngredientsManager extends GenericManager<DishIngredients,Integer> {
+	//URL  localhost:8080/services/api/dishIngredients
 
 	@GET
 	@Path("/dishIngredients/")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })	
 	List<DishIngredients> findByIdIngredient(@PathParam("ingredientsid_ingredient")Integer ingredient_id);
-	
-	@GET
-	@Path("/dishIngredients/")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	List<DishIngredients> findByIdDish(@PathParam("dishid_dish")Integer dish_id);
-	
+		
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	List<DishIngredients> getDishIngredients();
