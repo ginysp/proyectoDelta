@@ -22,8 +22,7 @@ public interface DishMapper {
 		@Mapping(source="name",target="name"),
 		@Mapping(source="size",target="size"),
 		@Mapping(source="description",target="description"),
-		@Mapping(source="totalcalories",target="totalcalories"),
-		@Mapping(source="count",target="count"),
+		@Mapping(source="timesserved",target="timesserved"),
 		@Mapping(source="menuDish",target="menuDish"),
 		@Mapping(source="dishIngredients",target="dishIngredients")
 	})

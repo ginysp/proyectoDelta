@@ -13,12 +13,16 @@ import cr.ulacit.dto.DishDTO;
 import cr.ulacit.mapper.DishMapper;
 import cr.ulacit.model.Dish;
 import cr.ulacit.service.DishManager;
-
+/*Implementación de la interfaz del DishManager
+ *@author: Gineth Salazar - Lourdes Sotomayor
+ *@version: 2, 2015
+ */
 @Transactional
 @Service("dishManager")
 @WebService(serviceName="DishService",  endpointInterface ="cr.ulacit.service.DishManager")
 public class DishManagerImpl extends GenericManagerImpl<Dish,Integer> implements DishManager {
 	DishDao dishDao;
+	Dish dish;
 	
 	public DishManagerImpl(){
 	}
@@ -27,8 +31,10 @@ public class DishManagerImpl extends GenericManagerImpl<Dish,Integer> implements
 		super(dishDao);
 		this.dishDao=dishDao;
 	}
-
-
+	/*Este método tiene como función encontrar un platillo mendiante su identificador único
+	 *@Param: Integer id_dish, identificador del platillo
+	 *@Return: List<DishDTO>
+	 */
 	@Override
 	public List<DishDTO> findByID(Integer id_dish) {
 		List<DishDTO> dishDTOs=null;
@@ -37,15 +43,9 @@ public class DishManagerImpl extends GenericManagerImpl<Dish,Integer> implements
 		return dishDTOs;
 	}
 
-	@Override
-	public List<DishDTO> findByName(String name) {
-		List<DishDTO> dishDTOs=null;
-		List<Dish> dishList= dishDao.findByName(name);
-		dishDTOs=DishMapper.INSTANCE.dishsToDishsDTOS(dishList);
-		return dishDTOs;
-	}
-
-
+	/*Este método tiene como función retornar todos los platillos
+	 *@Return: List<DishDTO>
+	 */
 	@Override
 	public List<DishDTO> getDish() {
 		List<DishDTO> dishDTOs=null;
@@ -53,5 +53,20 @@ public class DishManagerImpl extends GenericManagerImpl<Dish,Integer> implements
 		dishDTOs=DishMapper.INSTANCE.dishsToDishsDTOS(dishList);
 		return dishDTOs;
 	}
-
+	@Override
+	public void createDish(String name, String size, String description) {
+		dishDao.createDish(name, size, description);	
+	}
+	
+	@Override
+	public void updateDish(Integer id, String name, String size, String description) {
+		dishDao.updateDish(id, name, size, description);
+	}
+	@Override
+	public void deleteDish(Integer id_dish) {
+		dishDao.deleteDish(id_dish);
+		
+	}
+	
+	
 }

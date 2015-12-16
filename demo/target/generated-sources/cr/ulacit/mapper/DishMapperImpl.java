@@ -11,7 +11,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2015-11-19T22:17:10-0600",
+    date = "2015-12-15T15:51:27-0600",
     comments = "version: 1.0.0.CR1, compiler: javac, environment: Java 1.8.0_05 (Oracle Corporation)"
 )
 public class DishMapperImpl implements DishMapper {
@@ -40,12 +40,11 @@ public class DishMapperImpl implements DishMapper {
 
         dishDTO_.setDishIngredients( dishIngredientsSetToDishIngredientsArray( dish.getDishIngredients() ) );
         dishDTO_.setId_dish( dish.getId_dish() );
+        dishDTO_.setTimesserved( dish.getTimesserved() );
         dishDTO_.setMenuDish( menuDishSetToMenuDishArray( dish.getMenuDish() ) );
         dishDTO_.setSize( dish.getSize() );
         dishDTO_.setName( dish.getName() );
-        dishDTO_.setCount( dish.getCount() );
         dishDTO_.setDescription( dish.getDescription() );
-        dishDTO_.setTotalcalories( dish.getTotalcalories() );
 
         return dishDTO_;
     }

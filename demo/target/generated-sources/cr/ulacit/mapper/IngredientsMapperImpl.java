@@ -10,7 +10,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2015-11-19T22:17:10-0600",
+    date = "2015-12-15T15:51:27-0600",
     comments = "version: 1.0.0.CR1, compiler: javac, environment: Java 1.8.0_05 (Oracle Corporation)"
 )
 public class IngredientsMapperImpl implements IngredientsMapper {

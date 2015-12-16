@@ -27,9 +27,24 @@ public class EmployeeDaoTest extends BaseDaoTestCase {
 		 assertNotNull(empList.size());
 	 }
 	 @Test
-	 public void testFindByLastName() throws Exception{
-		 log.debug("testing find employee by lastname...");
-		 List<Employee> empList= empDao.findByLastName("Montoya Rocha");
-		 assertNotNull(empList.size());
+	 public void testGetEmployee() throws Exception{
+		 System.out.println("testing get Employee...");
+		 empDao.getEmployee("gsalazar");
 	 }
+	 @Test
+	 public void testUpdateEmployee() throws Exception{
+		 System.out.println("testing update Employee...");
+		 empDao.updateEmployee("lsotomayor", "lsotomayorc");
+	 }
+	 @Test
+	 public void testCreateEmployee() throws Exception{
+		 System.out.println("testing create Employee...");
+		 empDao.createEmployee("jlopez", "jlopez");
+	 }
+	 @Test
+	 public void testDeleteEmployee() throws Exception{
+		 System.out.println("testing delete Employee...");
+		 empDao.deleteEmployee(1);
+	 }
+	
 }

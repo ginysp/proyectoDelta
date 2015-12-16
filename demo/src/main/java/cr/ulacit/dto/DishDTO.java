@@ -1,4 +1,6 @@
 package cr.ulacit.dto;
+import java.util.Arrays;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 import cr.ulacit.model.DishIngredients;
@@ -11,23 +13,21 @@ public class DishDTO {
 	private String name;
 	private String size;
 	private String description;
-	private int totalcalories;
-	private int count;
+	private int timesserved;
 	private MenuDish[] menuDish;
 	private DishIngredients[] dishIngredients;
 	
 	public DishDTO(){
 		super();
 	}
-	public DishDTO(int id_dish, String name, String size, String description, int totalcalories, int count,
+	public DishDTO(int id_dish, String name, String size, String description, int timesserved,
 			MenuDish[] menuDish, DishIngredients[] dishIngredients) {
 		super();
 		this.id_dish = id_dish;
 		this.name = name;
 		this.size = size;
 		this.description = description;
-		this.totalcalories = totalcalories;
-		this.count = count;
+		this.timesserved = timesserved;
 		this.menuDish = menuDish;
 		this.dishIngredients = dishIngredients;
 	}
@@ -63,20 +63,11 @@ public class DishDTO {
 		this.description = description;
 	}
 
-	public int getTotalcalories() {
-		return totalcalories;
+	public int getTimesserved() {
+		return timesserved;
 	}
-
-	public void setTotalcalories(int totalcalories) {
-		this.totalcalories = totalcalories;
-	}
-
-	public int getCount() {
-		return count;
-	}
-
-	public void setCount(int count) {
-		this.count = count;
+	public void setTimesserved(int timesserved) {
+		this.timesserved = timesserved;
 	}
 	public MenuDish[] getMenuDish() {
 		return menuDish;
@@ -93,8 +84,7 @@ public class DishDTO {
 	@Override
 	public String toString() {
 		return "DishDTO [id_dish=" + id_dish + ", name=" + name + ", size=" + size + ", description=" + description
-				+ ", totalcalories=" + totalcalories + ", count=" + count + "]";
+				+ ", timesserved=" + timesserved + ", menuDish=" + Arrays.toString(menuDish) + ", dishIngredients="
+				+ Arrays.toString(dishIngredients) + "]";
 	}
-	
-	
 }

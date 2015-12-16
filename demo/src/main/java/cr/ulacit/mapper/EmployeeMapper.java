@@ -17,8 +17,6 @@ public interface EmployeeMapper {
 	@Mappings({
 		@Mapping(source="id_employee",target="id_employee"),
 		@Mapping(source="name",target="name"),
-		@Mapping(source="lastname",target="lastname"),
-		@Mapping(source="username",target="username"),
 		@Mapping(source="password",target="password"),
 		@Mapping(source="menu",target="menu")
 	})

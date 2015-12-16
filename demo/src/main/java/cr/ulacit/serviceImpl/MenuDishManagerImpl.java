@@ -11,9 +11,13 @@ import org.springframework.stereotype.Service;
 import cr.ulacit.dao.MenuDishDao;
 import cr.ulacit.model.MenuDish;
 import cr.ulacit.service.MenuDishManager;
+/*Implementación de la interfaz del MenuDishManager
+ *@author: Gineth Salazar - Lourdes Sotomayor
+ *@version: 2, 2015
+ */
 @Transactional
-@Service("menuManager")
-@WebService(serviceName="MenuService",  endpointInterface ="cr.ulacit.service.MenuManager")
+@Service("menuDishManager")
+@WebService(serviceName="MenuDishService",  endpointInterface ="cr.ulacit.service.MenuDishManager")
 public class MenuDishManagerImpl extends GenericManagerImpl<MenuDish, Integer> implements MenuDishManager {
 	MenuDishDao dao;
 	public MenuDishManagerImpl(){
@@ -22,9 +26,12 @@ public class MenuDishManagerImpl extends GenericManagerImpl<MenuDish, Integer> i
 		super();
 		this.dao=menuDishDao;
 	}
+	
 	@Override
-	public List<MenuDish> findByIdDish(Integer menu_id) {
-		return dao.findByIdDish(menu_id);
+	public List<MenuDish> getMenuDish() {
+		return dao.getAll();
 	}
+
+
 
 }

@@ -13,12 +13,7 @@ import cr.ulacit.model.Ingredients;
 public class IngredientsDaoTest extends BaseDaoTestCase {
 	@Autowired
 	private IngredientsDao ingreDao;
-	@Test
-	 public void testFindById() throws Exception{
-		 log.debug("testing find ingredient by id...");
-		 List<Ingredients> ingreList=ingreDao.findById(4);
-		 assertNotNull(ingreList.size());
-	}
+
 	@Test
 	 public void testFindByName() throws Exception{
 		 log.debug("testing find ingredient by name...");
@@ -26,4 +21,25 @@ public class IngredientsDaoTest extends BaseDaoTestCase {
 		 ingredients=ingreDao.findByName("Melocotones");
 		 assertNotNull(ingredients.size());
 	}
+	 @Test
+	 public void testCreateIngredients() throws Exception{
+		 System.out.println("testing create Ingredients...");
+		 ingreDao.createIngredients("Pasta",450);
+	 }
+	 @Test
+	 public void testGetIngredients() throws Exception{
+		 System.out.println("testing create Ingredients...");
+		 ingreDao.getIngredients("Melocotones");
+	 }
+	 @Test
+	 public void testUpdateIngredients() throws Exception{
+		 System.out.println("testing create Ingredients...");
+		 ingreDao.updateIngredients("Melocotones",500);
+	 }
+	 @Test
+	 public void testDeleteIngredients() throws Exception{
+		 System.out.println("testing create Ingredients...");
+		 ingreDao.deleteIngredients(1);
+	 }
 }
+

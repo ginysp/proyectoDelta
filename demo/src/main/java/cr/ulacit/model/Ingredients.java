@@ -13,6 +13,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/*Contiene información de los ingredients y tiene una relación con la clase DishIngredients
+ *@author: Gineth Salazar - Lourdes Sotomayor
+ *@version: 2, 2015
+ *@See: DishIngredients
+ */
 @XmlRootElement
 @Entity
 @Table(name="ingredients")
