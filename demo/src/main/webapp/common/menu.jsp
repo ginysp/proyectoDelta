@@ -11,6 +11,7 @@
     <menu:displayMenu name="Home"/>
     <menu:displayMenu name="UserMenu"/>
     <menu:displayMenu name="DishMenu"/>
+    <menu:displayMenu name="EmployeeMenu"/>
     <menu:displayMenu name="AdminMenu"/>
     <menu:displayMenu name="Logout"/>
 </ul>

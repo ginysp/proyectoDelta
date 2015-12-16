@@ -27,16 +27,15 @@ public class DishIngredients {
 	
 	@Column(name="quantity", length=10)
 	private int quantity;
+	@ManyToOne
+	@JoinColumn(name="ingredientsid_ingredient",nullable=false)
+	@JsonIgnore
+	private Ingredients Ingredients; //tabla ingredientsid_ingredient
 	
 	@ManyToOne
 	@JoinColumn(name="dishid_dish", nullable=false)
 	@JsonIgnore
 	private Dish Dish; //tabla dishid_dish
-	
-	@ManyToOne
-	@JoinColumn(name="ingredientsid_ingredient",nullable=false)
-	@JsonIgnore
-	private Ingredients Ingredients; //tabla ingredientsid_ingredient
 	
 	public int getId_dishingredients() {
 		return id_dishingredients;
@@ -61,7 +60,7 @@ public class DishIngredients {
 	}
 	public void setIngredients(Ingredients Ingredients) {
 		this.Ingredients = Ingredients;
-	}
+	} 
 	@Override
 	public int hashCode() {
 		final int prime = 31;

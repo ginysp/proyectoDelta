@@ -3,8 +3,10 @@ package cr.ulacit.service;
 import java.util.List;
 
 import javax.jws.WebService;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -12,7 +14,6 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import org.appfuse.service.GenericManager;
-
 import cr.ulacit.dto.IngredientsDTO;
 import cr.ulacit.model.Ingredients;
 /*Interfaz del Ingredients tiene como función ser un webservice con el fin de implementar el CRUD 
@@ -30,17 +31,26 @@ public interface IngredientsManager extends  GenericManager<Ingredients,Integer>
 	List<IngredientsDTO> findByID(@PathParam("id_ingredient")Integer id_ingredient);
 	
 	@GET
-	@Path("{id_ingredient}")
+	@Path("/name")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	List<IngredientsDTO> findByName(@QueryParam("name")String name);
+
+	@GET
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	List<IngredientsDTO> getIngredients();
 	
 	@POST
-	@Path("/createingredient/")
+	@Path("/create")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	boolean createingredient(@QueryParam("idIngredient") Integer id_ingredient,@QueryParam("name") String name,@QueryParam("calories") Integer calories);
+	public void createIngredients(@QueryParam("name")String name, @QueryParam("calories")Integer calories);
 	
-	@POST
-	@Path("/deleteingredient/")
+	@PUT
+	@Path("/update")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	boolean deleteingredient(@QueryParam("idIngredient") Integer id_ingredient);
+	public void updateIngredients(@QueryParam("name")String name, @QueryParam("calories")Integer calories);
+	
+	@DELETE
+	@Path("/delete")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public void deleteIngredients(@QueryParam("idIngredient") Integer id_ingredient);
 }

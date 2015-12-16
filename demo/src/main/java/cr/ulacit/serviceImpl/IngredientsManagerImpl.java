@@ -50,22 +50,25 @@ public class IngredientsManagerImpl extends GenericManagerImpl<Ingredients,Integ
 		ingreDTOs = IngredientsMapper.INSTANCE.ingredientsDTOs(ingreList);
 		return ingreDTOs;
 	}
-	/*Este método tiene como función crear un nuevo ingrediente
-	 *@Param: Integer idIngredient, identificador del ingrediente
-	 *@Param: String name, nombre del ingrediente
-	 *@Param: Integer calories, calorias del ingrediente
-	 *@Return: Boolean
-	 */
 	@Override
-	public boolean createingredient(Integer idIngredient, String name, Integer calories){
-		return false;
+	public List<IngredientsDTO> getIngredients() {
+		List<IngredientsDTO> ingreDTOs=null;
+		List<Ingredients> ingreList=dao.getAll();
+		ingreDTOs = IngredientsMapper.INSTANCE.ingredientsDTOs(ingreList);
+		return ingreDTOs;
 	}
-	/*Este método tiene como función eliminar un ingrediente
-	 *@Param: Integer id_ingredient, identificador del ingrediente
-	 *@Return: Boolean
-	 */
 	@Override
-	public boolean deleteingredient(Integer idIngredient){
-		return false;
+	public void createIngredients(String name, Integer calories) {
+		dao.createIngredients(name, calories);
 	}
+	@Override
+	public void updateIngredients(String name, Integer calories) {
+		dao.updateIngredients(name, calories);
+	}
+	@Override
+	public void deleteIngredients(Integer id_ingredient) {
+		dao.deleteIngredients(id_ingredient);
+	}
+	
+	
 }

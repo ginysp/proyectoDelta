@@ -3,8 +3,10 @@ package cr.ulacit.service;
 import java.util.List;
 
 import javax.jws.WebService;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -29,37 +31,26 @@ public interface DishManager extends GenericManager<Dish,Integer> {
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	List<DishDTO> findByID(@PathParam("id_dish") Integer id_dish);
 	//URL /services/api/dish/1
-	
-	@GET
-	@Path("/name/")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	List<DishDTO> findByName(@QueryParam("name") String name);
-	//URL: /services/api/dish/Matt
 
-
-	@GET
-	@Path("/getDish/")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	void getDishbyID(@PathParam("id_dish") Integer id_dish);
-	//URL  localhost:8080/services/api/dish/getDish/1
-	
-	@POST
-	@Path("/newDish/")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	void createDish(@QueryParam("name") String name,@QueryParam("size") String size,@QueryParam("description") String description);
-	
-	@POST
-	@Path("/updateDish/")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	void updateDish(@QueryParam("idDish") Integer dish_id,@QueryParam("name") String name,@QueryParam("size") String size,@QueryParam("description") String description);
-	
-	@POST
-	@Path("/updateDish/")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	void deleteDish(@QueryParam("idDish") Integer dish_id);
-	
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	List<DishDTO> getDish();
+	
+	@POST
+	@Path("/create")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public void createDish( @QueryParam("name")String name, @QueryParam("size")String size, @QueryParam("description")String description);
+	
+	@POST
+	@Path("/update")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public void updateDish(@QueryParam("id_dish") Integer id, @QueryParam("name")String name, @QueryParam("size")String size, @QueryParam("description")String description);
+	
+	@POST
+	@Path("/delete")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public void deleteDish(@QueryParam("id_dish") Integer id_dish);
+	
+	
 	
 }

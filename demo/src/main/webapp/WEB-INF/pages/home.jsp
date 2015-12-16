@@ -17,7 +17,7 @@
         <a href="<c:url value='/fileupload'/>"><fmt:message key="menu.selectFile"/></a>
     </li>
      <li>
-        <a href="<c:url value='/dishs'/>"><fmt:message key="menu.viewDish"/></a>
+        <a href="<c:url value='/dish'/>"><fmt:message key="menu.viewDish"/></a>
     </li>
 </ul>
 </body>

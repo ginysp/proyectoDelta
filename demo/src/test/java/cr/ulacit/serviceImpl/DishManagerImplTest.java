@@ -28,30 +28,25 @@ public class DishManagerImplTest extends BaseManagerMockTestCase {
 		Dish result=manager.get(id);
 		//then
 		assertSame(dish,result);
-		System.out.println("Dishs:"+dish);
-		System.out.println("Result:"+result);
 	}
+	
 	@Test
-	public void testGetDishID(){
-	 System.out.println("testing get Dish...");
-		manager.getDishbyID(2);	
+	public void testupdateDish(){
+		System.out.println("Testing update dish ");
+		manager.updateDish(1,"Arroz con pollo","grande","Especial de arroz de pollo");
 	}
 	@Test
 	public void testCreateDish(){
-		 System.out.println("testing create Dish...");
-		 manager.createDish("Pizza", "Grande","Pizza de supreme");
-	}
-	@Test
-	public void testUpdateDish(){
-		 System.out.println("testing update Dish...");
-		 manager.updateDish(2, "Tres Leches",  "mediano", "Tres leches especial de la casa");
-		
+		System.out.println("Testing create dish ");
+		manager.createDish("Pizza","grande", "Pizza de la casa supreme");
 	}
 	@Test
 	public void testDeleteDish(){
-		 System.out.println("testing delete Dish...");
-		 manager.deleteDish(1);
+		System.out.println("Testing delete dish ");
+		manager.deleteDish(1);
 	}
+	
+
 	
 	
 	 

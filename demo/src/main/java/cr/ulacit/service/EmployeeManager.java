@@ -3,8 +3,10 @@ package cr.ulacit.service;
 import java.util.List;
 
 import javax.jws.WebService;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -25,22 +27,32 @@ import cr.ulacit.model.Employee;
 public interface EmployeeManager extends GenericManager<Employee, Integer> {
 	//URL  localhost:8080/services/api/employee
 	@GET
-	@Path("/IDemployee")
+	@Path("{id_employee}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })	
 	List<EmployeeDTO> findByIdEmployee(@PathParam("id_employee") Integer id);
 	
 	@GET
-	@Path("/Name")
+	@Path("/name")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })	
 	List<EmployeeDTO> findByName(@QueryParam("name") String name);
 	
-	@POST
-	@Path("/createemployee/")
+	@GET
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	boolean createemployee(@QueryParam("id_employee") Integer id,@QueryParam("name") String name,@QueryParam("password") String password);
+	List<EmployeeDTO> getEmployee();
 	
 	@POST
-	@Path("/deleteemployee/")
+	@Path("/create")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	boolean deleteemployee(@QueryParam("id_employee") Integer id);
+	public void createEmployee(@QueryParam("name")String name, @QueryParam("password")String password);
+	
+	@POST
+	@Path("/upadate")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public void updateEmployee(@QueryParam("id_employee") Integer id, @QueryParam("name")String name, @QueryParam("password")String password);
+	
+	@POST
+	@Path("/delete")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public void deleteEmployee(@QueryParam("id_employee") Integer id);
+	
 }

@@ -21,6 +21,7 @@ import cr.ulacit.model.MenuDish;
 public interface MenuDishManager extends  GenericManager<MenuDish,Integer> {
 	//URL  localhost:8080/services/api/menuDish
 	@GET
+	@Path("{id_menudish}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	List<MenuDish> getMenuDish();
 	

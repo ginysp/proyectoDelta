@@ -42,17 +42,6 @@ public class DishManagerImpl extends GenericManagerImpl<Dish,Integer> implements
 		dishDTOs=DishMapper.INSTANCE.dishsToDishsDTOS(dishList);
 		return dishDTOs;
 	}
-	/*Este método tiene como función encontrar un platillo mendiante su nombre 
-	 *@Param: String name, nombre del platillo
-	 *@Return: List<DishDTO>
-	 */
-	@Override
-	public List<DishDTO> findByName(String name) {
-		List<DishDTO> dishDTOs=null;
-		List<Dish> dishList= dishDao.findByName(name);
-		dishDTOs=DishMapper.INSTANCE.dishsToDishsDTOS(dishList);
-		return dishDTOs;
-	}
 
 	/*Este método tiene como función retornar todos los platillos
 	 *@Return: List<DishDTO>
@@ -65,23 +54,19 @@ public class DishManagerImpl extends GenericManagerImpl<Dish,Integer> implements
 		return dishDTOs;
 	}
 	@Override
-	public void getDishbyID(Integer id_dish) {
-		dishDao.getDish(id_dish);
-		
-	}
-	@Override
 	public void createDish(String name, String size, String description) {
-		dishDao.createDish(name, size, description);
-		
+		dishDao.createDish(name, size, description);	
+	}
+	
+	@Override
+	public void updateDish(Integer id, String name, String size, String description) {
+		dishDao.updateDish(id, name, size, description);
 	}
 	@Override
-	public void updateDish(Integer dish_id, String name, String size, String description) {
-		dishDao.updateDish(dish_id, name, size, description);
+	public void deleteDish(Integer id_dish) {
+		dishDao.deleteDish(id_dish);
 		
 	}
-	@Override
-	public void deleteDish(Integer dish_id) {
-		dishDao.deleteDish(dish_id);
-	}
+	
 	
 }

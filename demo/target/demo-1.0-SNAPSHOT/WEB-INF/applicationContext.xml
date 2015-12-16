@@ -14,8 +14,7 @@
     <!-- Add new DAOs here -->
 
     <!-- Add new Managers here -->
-     <bean id="dishManager" class="cr.ulacit.serviceImpl.DishManagerImpl">  </bean>    
-    
+ 
     <!-- Configure and Alternative PasswordTokenManager -->
 	<!-- <bean id="passwordTokenManager" class="org.appfuse.service.impl.PersistentPasswordTokenManagerImpl" autowire="default" /> -->
 </beans>

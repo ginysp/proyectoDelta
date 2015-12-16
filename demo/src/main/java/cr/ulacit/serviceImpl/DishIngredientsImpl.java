@@ -35,45 +35,11 @@ public class DishIngredientsImpl extends GenericManagerImpl<DishIngredients,Inte
 	public List<DishIngredients> getDishIngredients() {
 		return dishIngreDao.getAll();
 	}
-	/*Este método tiene como función obtener la sumatoria de las calorias del platillo
-	 *@Param: List<Double> list
-	 *@Return: double
-	 */
 	@Override
-	public double totalCalories(List<Double> list) {
+	public void getDishIngredients(Integer id_dishingredients) {
+		dishIngreDao.getDishIngredients(id_dishingredients);
 		
-		double totalCal = 0;
-		
-		for(int i=0; i < list.size();i++)
-		{
-			totalCal = totalCal + list.get(i);
-		}
-		
-		return totalCal;
 	}
-	/*Este método tiene como función crear un nuevo ingrediente del platillo
-	 *@Param: integer idDish, indentificador del platillo
-	 *@Param: integer idIngredient, identificador del ingrediente
-	 *@Return: boolean
-	 */
-	@Override
-	public boolean createdishingredient(Integer idDish, Integer idIngredient){
 	
-		return false;
-	}
-	/*Este método tiene como función eliminar un ingrediente del platillo
-	 * @Param: integer idDish, identificador del platillo
-	 *@Param: integer idIngredient, identificador del ingrediente
-	 *@Return: boolean
-	 */
-	@Override
-	public boolean deletedishingredient(Integer idDish, Integer idIngredient){
 	
-		return false;
-	}
-	@Override
-	public List<DishIngredients> findByIdIngredient(Integer ingredient_id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

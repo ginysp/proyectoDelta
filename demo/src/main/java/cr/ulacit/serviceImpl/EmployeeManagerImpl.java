@@ -49,22 +49,26 @@ public class EmployeeManagerImpl extends GenericManagerImpl<Employee,Integer> im
 		employeeDTOs=EmployeeMapper.INSTANCE.employeeToEmpDTO(employeeList);
 		return employeeDTOs;
 	}
-	/*Este método tiene como función crear un nuevo empleado
-	 *@Param: Integer idEmployee, identificador del empleado
-	 *@Param: String name, nombre del empleado
-	 *@Param: String password, contraseña del empleado
-	 *@Return: Boolena
-	 */
 	@Override
-	public boolean createemployee(Integer idEmployee, String name, String password){
-		return false;
+	public List<EmployeeDTO> getEmployee() {
+		List<EmployeeDTO> empDTOs=null;
+		List<Employee> empList= EmployeeDao.getAll();
+		empDTOs=EmployeeMapper.INSTANCE.employeeToEmpDTO(empList);
+		return empDTOs;
 	}
-	/*Este método tiene como función eliminar un empleado
-	 *@Param: Integer idEmployee, identificador del empleado
-	 *@Return: boolean
-	 */
 	@Override
-	public boolean deleteemployee(Integer idEmployee){
-		return false;
+	public void createEmployee(String name, String password) {
+		EmployeeDao.createEmployee(name, password);
+		
 	}
+	@Override
+	public void updateEmployee(Integer id, String name, String password) {
+		EmployeeDao.updateEmployee(name, password);
+	}
+	@Override
+	public void deleteEmployee(Integer id) {
+		EmployeeDao.deleteEmployee(id);
+	}
+	
+	
 }
